@@ -87,7 +87,7 @@
 
                                     <div class="panel-body">
                                         <ul>                                            
-                                            <li><a href="cua-hang/{{$cat->id}}">{{$cat->name}}</a></li>
+                                            <li><a href="cua-hang/{{$cat->id}}">{{$cat->name}} ({{$cat->products->count()}})</a></li>
                                         </ul>
                                     </div>
                                     <!-- 

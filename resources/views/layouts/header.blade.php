@@ -32,9 +32,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản phẩm</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="{{route('cua-hang','tat-ca')}}">Tấc cả sản phẩm</a>  
+                        <a class="dropdown-item" href="{{route('cua-hang','tat-ca')}}">Tất cả sản phẩm</a>  
                         @foreach($categories as $cat)
-                            <a class="dropdown-item" href="{{route('cua-hang',$cat->id)}}">{{$cat->name}}</a>                
+                            <a class="dropdown-item" href="{{route('cua-hang',$cat->id)}}">{{$cat->name}} ({{$cat->products->count()}})</a>                
                         @endforeach
                     </div>
                 </li>                
