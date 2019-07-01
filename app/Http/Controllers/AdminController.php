@@ -32,7 +32,7 @@ class AdminController extends Controller
     {
         $category = Category::all()->count();
         $product = Product::all()->count();
-        $cart = Cart::count();
+        $cart = ShoppingCart::getOrdersCount();
         $revenue = ShoppingCart::getOrdersTotal();
         return view('admin.home', compact('category', 'product', 'cart', 'revenue'));
     }
