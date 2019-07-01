@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-Use App\Category;
+use App\Category;
 
 class CategoryTableSeeder extends Seeder
 {
@@ -12,29 +12,29 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        $cat = new Category();
-        $cat->name = 'Running';
-        $cat->slug = 'running';
-        $cat->save();
+        Category::create([
+            'name' => 'Sneaker',
+            'slug' => 'running',
+        ]);
 
-        $cat = new Category();
-        $cat->name = 'Sneaker';
-        $cat->slug = 'sneaker';
-        $cat->save();
+        Category::create([
+            'name' => 'Giày đá bóng',
+            'slug' => 'football',
+        ]);
 
-        $cat = new Category();
-        $cat->name = 'Football';
-        $cat->slug = 'football';
-        $cat->save();
+        Category::create([
+            'name' => 'Boot',
+            'slug' => 'boot',
+        ]);
 
-        $cat = new Category();
-        $cat->name = 'Boot';
-        $cat->slug = 'boot';
-        $cat->save();
+        Category::create([
+            'name' => 'Slip On',
+            'slug' => 'slip-on',
+        ]);
 
-        $cat = new Category();
-        $cat->name = 'Slip On';
-        $cat->slug = 'slip-on';
-        $cat->save();
+        Category::create([
+            'name' => 'Giày tây',
+            'slug' => 'giay-tay',
+        ]);
     }
 }
