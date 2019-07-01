@@ -20,13 +20,14 @@ class PageController extends Controller
     {
 
         $categories = Category::all();
+        $allProductount = Product::count();
         if ($id != 'tat-ca') {
             $category = Category::where('id', $id)->first();
             $products = Product::where('category_id', $id)->orderBy('updated_at', 'desc')->paginate(20);
             return view('page.shop', compact('categories', 'category', 'products'));
         }
         else{
-            $products = Product::orderBy('updated_at', 'desc')->paginate(20);
+            $products = Product::orderBy('updated_at', 'desc')->paginate(21);
             return view('page.shop', compact('categories', 'products'));
         }
         
