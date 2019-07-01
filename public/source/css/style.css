@@ -4000,7 +4000,7 @@
   .breadcrumb-item.active {
     color: #6c757d; }
   
-  .pagination {
+  /* .pagination {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4075,7 +4075,7 @@
   
   .pagination-sm .page-item:last-child .page-link {
     border-top-right-radius: 0.2rem;
-    border-bottom-right-radius: 0.2rem; }
+    border-bottom-right-radius: 0.2rem; } */
   
   .badge {
     display: inline-block;
