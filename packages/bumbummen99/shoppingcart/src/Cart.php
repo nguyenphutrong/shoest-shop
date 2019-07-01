@@ -580,7 +580,7 @@ class Cart
         $this->getConnection()->table($this->getTableName())->insert([
             // 'identifier' => $identifier,
             'instance'   => $this->currentInstance(),
-            'content'    => serialize($content),
+            'content'    => base64_encode(serialize($content)),
             'created_at' => now(),
         ]);
 
@@ -607,7 +607,7 @@ class Cart
         $stored = $this->getConnection()->table($this->getTableName())
             ->where('identifier', $identifier)->first();
 
-        $storedContent = unserialize(data_get($stored, 'content'));
+        $storedContent = unserialize(base64_decode(data_get($stored, 'content')));
 
         $currentInstance = $this->currentInstance();
 
@@ -647,7 +647,7 @@ class Cart
         $stored = $this->getConnection()->table($this->getTableName())
             ->where('identifier', $identifier)->first();
 
-        $storedContent = unserialize($stored->content);
+        $storedContent = unserialize(base64_decode($stored->content));
 
         foreach ($storedContent as $cartItem) {
             $this->addCartItem($cartItem, $keepDiscount, $keepTax);

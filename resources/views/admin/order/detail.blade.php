@@ -33,7 +33,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $content = unserialize(data_get($order, 'content')); ?>
+                                    <?php $content = unserialize(base64_decode(data_get($order, 'content'))); ?>
                                     @foreach($content as $row)
                                     <tr class="text-center">
 

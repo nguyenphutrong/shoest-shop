@@ -28,13 +28,13 @@ class ShoppingCart extends Model
 
     public static function getOrderItemCount($item)
     {
-        $content = unserialize(data_get(ShoppingCart::find($item->identifier), 'content'));
+        $content = unserialize(base64_decode(data_get(ShoppingCart::find($item->identifier), 'content')));
         return $content->count();
     }
 
     public static function getOrderItemTotal($item)
     {
-        $content = unserialize(data_get(ShoppingCart::find($item->identifier), 'content'));
+        $content = unserialize(base64_decode(data_get(ShoppingCart::find($item->identifier), 'content')));
         $total = 0;
         foreach ($content as $pro) {
             $total += $pro->subtotal;
