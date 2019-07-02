@@ -23,22 +23,25 @@
             </div>
         </div>
         <div class="row block-9">
-            <div class="col-md-6 order-md-last d-flex">
-                <form action="#" class="bg-white p-5 contact-form">
+            <div class="col-md-6 order-md-last d-flex">                
+                <form action="{{route('contact.post')}}" class="bg-white p-5 contact-form" method="post">                    
+                    @include('error.note')
+                    @include('thongbao')
+                    @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Tên của bạn">
+                        <input name="name" type="text" class="form-control" placeholder="Tên của bạn"  required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Địa chỉ email">
+                        <input name="email" type="text" class="form-control" placeholder="Địa chỉ email"  required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Chủ đề">
+                        <input name="subject" type="text" class="form-control" placeholder="Chủ đề"  required>
                     </div>
                     <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Nội dung"></textarea>
+                        <textarea name="content" id="" cols="30" rows="7" class="form-control" placeholder="Nội dung" required></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                        <input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
                     </div>
                 </form>
 

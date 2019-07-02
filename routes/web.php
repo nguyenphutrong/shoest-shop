@@ -59,7 +59,10 @@ Route::get('thanh-toan', 'PageController@getCheckout')->name('thanh-toan');
 Route::post('thanh-toan', 'CartController@postComplete')->name('complete');
 
 Route::get('gioi-thieu', 'PageController@getAbout')->name('gioi-thieu');
+
 Route::get('lien-he', 'PageController@getContact')->name('lien-he');
+Route::post('lien-he', 'PageController@postContact')->name('contact.post');
+
 Route::get('complete', 'PageController@getComplete')->name('complete');
 
 

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
 use App\Slide;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -56,5 +58,10 @@ class PageController extends Controller
     public function getContact()
     {
         return view('page.contact');
+    }
+    public function postContact(Request $request){
+        Mail::send(new ContactMail($request));
+
+        return back()->with('thongbao','Gửi thành công');
     }
 }
