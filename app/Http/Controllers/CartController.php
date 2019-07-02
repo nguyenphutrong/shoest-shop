@@ -32,11 +32,12 @@ class CartController extends Controller
         $email = $req->email;
         $name = $req->name;
         Mail::send('page.mail', $data, function ($message) use($email,$name) {
-            $message->from('shopshoest@gmail.com', 'Cửa hàng Shoest');
+            $message->from(config('shop.email'), 'Cửa hàng Shoest');
             $message->to($email, $name);
-            $message->cc('shopshoest@gmail.com', 'Cửa hàng Shoest');
+            $message->cc(config('shop.email'), 'Cửa hàng Shoest');
             $message->subject('Xác nhận hóa đơn mua hàng Shoest');
         });
+
         Cart::store();
         Cart::destroy();
         return redirect('complete');
